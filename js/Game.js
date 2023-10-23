@@ -5,5 +5,9 @@ class BattleGame {
     this.enemy = enemy;
   }
 
-  battle(attacker, defender) {}
+  battle(attacker, defender) {
+    attacker.attackPlayer();
+    const diceValue = this.dice.roll();
+    defender.life -= attacker.attack * diceValue;
+  }
 }
