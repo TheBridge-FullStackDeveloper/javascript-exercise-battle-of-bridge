@@ -1,6 +1,14 @@
+![image](https://github.com/TheBridge-FullStackDeveloper/javascript-exercise-battle-of-bridge/assets/33903092/e71f54ee-a4ad-4a3b-b06d-24250a2ef04b)
+
 # Battle of bridge
 
 Este es un juego de batalla simple que incluye la lógica de jugador, dado y el juego en sí. Aquí se detallan las clases y métodos necesarios para el juego.
+
+
+
+https://github.com/TheBridge-FullStackDeveloper/javascript-exercise-battle-of-bridge/assets/33903092/dfe5c711-bc9f-4461-89c9-a99384215003
+
+
 
 ## Clase Player
 
@@ -36,8 +44,14 @@ La clase `BattleGame` es la encargada de gestionar el juego en sí y tiene los s
 La clase incluye los siguientes métodos:
 
 - `battle(attacker, defender)`: este método recibe un atacante y un defensor como parámetros y hace que el atacante ataque al defensor. Esto implica usar el dado para determinar el valor del ataque y reducir la vida del defensor en consecuencia.
-- `isGameOver()`: este método devuelve `true` si el jugador o el enemigo están muertos, lo que significa que el juego ha terminado.
 
 Asegúrate de implementar estas clases y métodos en tu juego para que funcione correctamente.
+
+## Bonuses 🏆
+
+- Intenta que la barra de la vida se queda a zero si la vida del jugador se queda en zero
+- Intenta crear un botón de reset para que el juego reinicie cuando uno de los jugadores se queda sin vida
+- Se el daño es mayor de 10 puntos pon un mensaje de "¡Ataque crítico!" en la consola
+
 
 ¡Diviértete jugando tu juego de batalla!
