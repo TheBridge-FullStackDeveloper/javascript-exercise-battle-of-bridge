@@ -20,7 +20,7 @@ La clase `Player` representa a un jugador y tiene los siguientes atributos:
 
 Además, incluye los siguientes métodos:
 
-- `attackPlayer(player, diceValue)`: este método recibe un jugador como objetivo y un valor del dado para realizar un ataque al jugador objetivo.
+- `attackPlayer(player, diceValue)`: este método recibe un jugador como objetivo y un valor del dado para realizar un ataque, QUE ES LA MULTIPLICACIÓN ENTRE EL ATTACK DEL PLAYER Y DICE VALUE al jugador objetivo.
 - `isDead()`: este método devuelve `true` si el jugador está muerto, es decir, si su vida es igual o menor que cero.
 
 ## Clase Dice
