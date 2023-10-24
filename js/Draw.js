@@ -77,3 +77,7 @@ else {
     document.getElementById("attack").disabled = true;
   }
 }
+
+document.getElementById("reset").addEventListener("click", function() {
+  location.reload();
+})
