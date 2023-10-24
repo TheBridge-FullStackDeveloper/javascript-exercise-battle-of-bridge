@@ -43,10 +43,18 @@ function renderLife(player) {
 function renderBattleLog(attacker, defender) {
   diceElement.innerText = game.dice.value;
   let text, defeatText;
+  let attackDamage = attacker.attack * game.dice.value
 
+  if (attackDamage >= 10) {
+    text = `¡Ataque crítico! ${attacker.name} ataca a ${defender.name} y le hace ${
+      attackDamage
+    } puntos de daño`;
+  }
+else {
   text = `${attacker.name} ataca a ${defender.name} y le hace ${
-    attacker.attack * game.dice.value
+    attackDamage
   } puntos de daño`;
+}
 
   let elementText = document.createTextNode(text);
   let li = document.createElement("li");
