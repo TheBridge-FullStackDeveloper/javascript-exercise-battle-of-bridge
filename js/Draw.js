@@ -74,14 +74,6 @@ function renderBattleLog(attacker, defender) {
     document.getElementById("attack").addEventListener("click", function () {
       location.reload();
     });
-
-    /*     const playAgain = document.getElementById("reset");
-    playAgain.classList.remove = "hidden";
-    const attackHidden = document.getElementById("attack");
-    attackHidden.className = "hidden"; */
+    document.getElementById("attack").disabled = false;
   }
 }
-
-document.getElementById("reset").addEventListener("click", function () {
-  location.reload();
-});
