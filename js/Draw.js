@@ -33,9 +33,9 @@ function renderLife(player) {
   const lifeBar = document.getElementById(
     "health-" + player.name.toLowerCase()
   );
-  if (player.life <= 0){
+  if (player.life <= 0) {
     lifeBar.setAttribute("style", "width:0%");
-    return
+    return;
   }
   lifeBar.setAttribute("style", "width:" + player.life + "%");
 }
@@ -43,18 +43,13 @@ function renderLife(player) {
 function renderBattleLog(attacker, defender) {
   diceElement.innerText = game.dice.value;
   let text, defeatText;
-  let attackDamage = attacker.attack * game.dice.value
+  let attackDamage = attacker.attack * game.dice.value;
 
   if (attackDamage >= 10) {
-    text = `¡Ataque crítico! ${attacker.name} ataca a ${defender.name} y le hace ${
-      attackDamage
-    } puntos de daño`;
+    text = `¡Ataque crítico! ${attacker.name} ataca a ${defender.name} y le hace ${attackDamage} puntos de daño`;
+  } else {
+    text = `${attacker.name} ataca a ${defender.name} y le hace ${attackDamage} puntos de daño`;
   }
-else {
-  text = `${attacker.name} ataca a ${defender.name} y le hace ${
-    attackDamage
-  } puntos de daño`;
-}
 
   let elementText = document.createTextNode(text);
   let li = document.createElement("li");
@@ -74,10 +69,19 @@ else {
 
     const gameOver = document.getElementById("game-over");
     gameOver.className = "show";
-    document.getElementById("attack").disabled = true;
+    const playAgain = document.getElementById("attack");
+    playAgain.textContent = "Again! 🔥";
+    document.getElementById("attack").addEventListener("click", function () {
+      location.reload();
+    });
+
+    /*     const playAgain = document.getElementById("reset");
+    playAgain.classList.remove = "hidden";
+    const attackHidden = document.getElementById("attack");
+    attackHidden.className = "hidden"; */
   }
 }
 
-document.getElementById("reset").addEventListener("click", function() {
+document.getElementById("reset").addEventListener("click", function () {
   location.reload();
-})
+});
