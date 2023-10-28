@@ -1,5 +1,5 @@
 class Dice {
-    constructor() {
+    constructor(value) {
         this.value = 1;
     }
 
