@@ -69,11 +69,27 @@ function renderBattleLog(attacker, defender) {
 
     const gameOver = document.getElementById("game-over");
     gameOver.className = "show";
-    const playAgain = document.getElementById("attack");
-    playAgain.textContent = "Again! 🔥";
-    document.getElementById("attack").addEventListener("click", function () {
-      location.reload();
-    });
-    document.getElementById("attack").disabled = false;
+    
+    document.getElementById("attack").disabled = true;
   }
 }
+function reset() {
+ 
+  game.player.life = 100;
+  game.enemy.life = 100;
+
+  renderLife(game.player);
+  renderLife(game.enemy);
+
+  diceElement.innerHTML = 0;
+
+  const battleLog = document.getElementById("history");
+  battleLog.innerHTML = '';
+
+  document.getElementById("attack").disabled = false;
+
+  const gameOver = document.getElementById("game-over");
+  gameOver.className = "hidden";
+}
+
+document.getElementById("reset").addEventListener("click", reset);
