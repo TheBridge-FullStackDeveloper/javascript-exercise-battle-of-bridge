@@ -33,23 +33,42 @@ function renderLife(player) {
   const lifeBar = document.getElementById(
     "health-" + player.name.toLowerCase()
   );
-  lifeBar.setAttribute("style", "width:" + player.life + "%");
+  if (player.life <= 0) {
+    lifeBar.style.width = "0%"; //Bonus: life bar empty if player has no life
+  } else {
+    lifeBar.style.width = player.life + "%";
+  }
 }
 
 function renderBattleLog(attacker, defender) {
   diceElement.innerText = game.dice.value;
-  let text, defeatText;
+  let text, defeatText, criticalText;
+
+  criticalText = `Ataque crítico: ${attacker.name} ataca a ${
+    defender.name
+  } y le hace ${attacker.attack * game.dice.value} puntos de daño`;
 
   text = `${attacker.name} ataca a ${defender.name} y le hace ${
     attacker.attack * game.dice.value
   } puntos de daño`;
 
-  let elementText = document.createTextNode(text);
-  let li = document.createElement("li");
-  li.className = "typing";
-  li.appendChild(elementText);
-  ul.appendChild(li);
-  renderLife(defender);
+  //Bonus: message if the damage is more than 10 points
+
+  if (attacker.attack * game.dice.value > 10) {
+    let elementText = document.createTextNode(criticalText);
+    let li = document.createElement("li");
+    li.className = "typing";
+    li.appendChild(elementText);
+    ul.appendChild(li);
+    renderLife(defender);
+  } else {
+    let elementText = document.createTextNode(text);
+    let li = document.createElement("li");
+    li.className = "typing";
+    li.appendChild(elementText);
+    ul.appendChild(li);
+    renderLife(defender);
+  }
 
   if (defender.isDead()) {
     defeatText =
@@ -65,3 +84,18 @@ function renderBattleLog(attacker, defender) {
     document.getElementById("attack").disabled = true;
   }
 }
+
+//Bonus: reset button
+
+const resetButton = document.getElementById("reset-button");
+resetButton.addEventListener("click", function () {
+  player.life = 100;
+  enemy.life = 100;
+  ul.innerHTML = "";
+  diceElement.innerText = "";
+  document.getElementById("attack").disabled = false;
+  renderLife(player);
+  renderLife(enemy);
+  const gameOver = document.getElementById("game-over");
+  gameOver.className = "hidden";
+});

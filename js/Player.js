@@ -7,12 +7,10 @@ class Player {
 
   attackPlayer(player, diceValue) {
     if (this.life > 0) {
-      player.life -= this.attack * diceValue;
+      const damage = this.attack * diceValue;
+      player.life -= damage;
     }
-
-    if (this.life <= 0) {
-      player.life += 0;
-    }
+    return player.life;
   }
 
   isDead() {

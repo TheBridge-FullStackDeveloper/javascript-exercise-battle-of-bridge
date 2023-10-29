@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battle of Bridge</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Battle of Bridge</title>
-  <link rel="stylesheet" href="./styles/style.css">
-</head>
-
-<body>
-  <div class="flex gap-2">
-    <div>
-      <p class="name">Héroe 🦸</p>
-      <div class="bar">
-        <div id="health-heroe" class="health"></div>
+  <body>
+    <div class="flex gap-2">
+      <div>
+        <p class="name">Héroe 🦸</p>
+        <div class="bar">
+          <div id="health-heroe" class="health"></div>
+        </div>
+        <button class="start-btn" id="attack">Attack ⚔️</button>
       </div>
-      <button class='start-btn' id="attack">Attack ⚔️</button>
-    </div>
-    <img
-      src="https://imgs.search.brave.com/tHnJRWDPWrVJeGFuPFRXraeNYlQN61wuLEk5GRCO3uI/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTMx/NTc5Nzk0Ni92ZWN0/b3IvdnMtdmVyc3Vz/LXNjcmVlbi10aGUt/Y29uY2VwdC1vZi1i/YXR0bGUtY29tcGV0/aXRpb24tZHVlbC1v/ci1jb21wYXJpc29u/LXZlY3Rvci1pbGx1/c3RyYXRpb24uanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPTBN/dFJncmdhdmoyWWlE/d2ZMU0poSGM1Rm1t/R01RV3F6cy11dzlF/ZXliS0E9"
-      alt="">
-    <div>
-      <p class="name">Enemigo 🦹</p>
-      <div class="bar">
-        <div id="health-enemigo" class="health"></div>
-      </div>
-    </div>
-  </div>
-  <div class="flex gap-2">
-    <div>
-      <p>Dado</p>
-      <div class="dice flex-center">
-        <p id="dice-value">0</p>
+      <img
+        src="https://imgs.search.brave.com/tHnJRWDPWrVJeGFuPFRXraeNYlQN61wuLEk5GRCO3uI/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTMx/NTc5Nzk0Ni92ZWN0/b3IvdnMtdmVyc3Vz/LXNjcmVlbi10aGUt/Y29uY2VwdC1vZi1i/YXR0bGUtY29tcGV0/aXRpb24tZHVlbC1v/ci1jb21wYXJpc29u/LXZlY3Rvci1pbGx1/c3RyYXRpb24uanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPTBN/dFJncmdhdmoyWWlE/d2ZMU0poSGM1Rm1t/R01RV3F6cy11dzlF/ZXliS0E9"
+        alt=""
+      />
+      <div>
+        <p class="name">Enemigo 🦹</p>
+        <div class="bar">
+          <div id="health-enemigo" class="health"></div>
+        </div>
       </div>
     </div>
-    <div class="box">
-      <p>Battle Log</p>
-      <ul id="history"></ul>
+    <div class="flex gap-2">
+      <div>
+        <p>Dado</p>
+        <div class="dice flex-center">
+          <p id="dice-value">0</p>
+        </div>
+      </div>
+      <div class="box">
+        <p>Battle Log</p>
+        <ul id="history"></ul>
+      </div>
     </div>
-  </div>
-  <div class="hidden" id="game-over">
-    <p>Game Over</p>
-  </div>
-  <script src="./js/Dice.js"></script>
-  <script src="./js/Player.js"></script>
-  <script src="./js/Game.js"></script>
-  <script src="./js/Draw.js"></script>
-</body>
-
+    <div class="hidden" id="game-over">
+      <p>Game Over</p>
+    </div>
+    <button id="reset-button">Restart Game</button>
+    <script src="./js/Dice.js"></script>
+    <script src="./js/Player.js"></script>
+    <script src="./js/Game.js"></script>
+    <script src="./js/Draw.js"></script>
+  </body>
 </html>
