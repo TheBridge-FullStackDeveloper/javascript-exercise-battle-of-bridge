@@ -78,7 +78,7 @@ img {
   align-items: center;
 }
 
-.start-btn {
+.start-btn, .reset-btn{
   text-align: center;
   display: inline-block;
   margin: 5px;
