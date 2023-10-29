@@ -5,7 +5,7 @@ class BattleGame {
     this.enemy = enemy;
   }
 
-  battle(player, enemy) {
-    player.attackPlayer(enemy, this.dice.roll());
+  battle(attacker, defender) {
+    attacker.attackPlayer(defender, this.dice.roll());
   }
 }
