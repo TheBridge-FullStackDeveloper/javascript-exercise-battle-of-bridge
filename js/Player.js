@@ -2,26 +2,17 @@ class Player {
     constructor(name, life, attack) {
         this.name = name;
         this.life = life;
-        this.attack = attack;   
+        this.attack = attack;
     }
 
     attackPlayer(player, diceValue) {
-        player.life -= diceValue.value * this.attack;
-    }
-
-     isDead() {
-        if (this.life <= 0) {
-            return true;
-        } else {
-            return false;
+        if (this.isDead()) {
+            return;
         }
+        player.life -= diceValue * this.attack;
     }
-    
 
-
-
-
-
-
-
+    isDead() {
+        return this.life <= 0;
+    }
 }
